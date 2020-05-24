@@ -11,7 +11,7 @@ pipeline {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'DockerHub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-						docker build -t vjomants/valdiscapstone .
+						sudo docker build -t vjomants/valdiscapstone .
 					'''
 				}
 			}
@@ -20,8 +20,8 @@ pipeline {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'DockerHub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-						docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-						docker push vjomants/valdiscapstone
+						sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+						sudo docker push vjomants/valdiscapstone
 					'''
 				}
 			}
