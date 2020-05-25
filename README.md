@@ -1,7 +1,6 @@
 Udacity DevOps Capstone project
 =================================
 
-##About the project
 In this project I applied the skills and knowledge which were developed throughout the Cloud DevOps Nanodegree program. These include:
 
 Working in AWS
