@@ -40,7 +40,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-2', credentials:'MyCredentials') {
 					sh '''
-						kubectl apply -f ./blue-controller.json
+						sudo kubectl apply -f ./blue-controller.json
 					'''
 				}
 			}
@@ -49,7 +49,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-2', credentials:'MyCredentials') {
 					sh '''
-						kubectl apply -f ./green-controller.json
+						sudo kubectl apply -f ./green-controller.json
 					'''
 				}
 			}
@@ -58,7 +58,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-2', credentials:'MyCredentials') {
 					sh '''
-						kubectl apply -f ./blue-service.json
+						sudo kubectl apply -f ./blue-service.json
 					'''
 				}
 			}
@@ -72,7 +72,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-2', credentials:'MyCredentials') {
 					sh '''
-						kubectl apply -f ./green-service.json
+						sudo kubectl apply -f ./green-service.json
 					'''
 				}
 			}
