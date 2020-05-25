@@ -31,6 +31,7 @@ pipeline {
 				withAWS(region:'us-east-2', credentials:'MyCredentials') {
 					sh '''
 						sudo -s
+						kubectl config get-contexts
 						kubectl config use-context arn:aws:eks:us-east-2:839035252841:cluster/valdiscapstone
 					'''
 				}
